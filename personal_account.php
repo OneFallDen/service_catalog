@@ -105,7 +105,7 @@
         
         echo '
                 <div>
-                    <strong>Дата:</strong><select class="filter__list" name="date_sort">
+                    <select class="filter__list" name="date_sort">
                         <option value="DESC" selected>От нового к старому</option>
                         <option value="ASC">От старого к новому</option>
                     </select>
