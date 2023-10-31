@@ -114,8 +114,8 @@
 
         echo '
             <div>
-                <strong>Статус</strong><select class="filter__list" name="status_sort">
-                    <option value="ALL" selected>Все</option>
+                <select class="filter__list" name="status_sort">
+                    <option value="ALL" selected>Выбрать статус</option>
                     <option value="NEW">Не обработан</option>
                     <option value="PREPARATION">В работе</option>
                     <option value="CLIENT">Обработан</option>
@@ -145,8 +145,8 @@
 
             echo '
             <div>
-                <strong>Раздел</strong><select class="filter__list" name="section_sort">
-                    <option value="По умолчанию" selected>По умолчанию</option>
+                <select class="filter__list" name="section_sort">
+                    <option value="По умолчанию" selected>Выбрать раздел</option>
             ';
 
             // Выводим разделы

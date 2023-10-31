@@ -25,7 +25,7 @@ if (CModule::IncludeModule("crm")) {
         
         echo '
                 <div>
-                    <strong>Дата:</strong><select class="filter__list" name="date_sort">
+                    <select class="filter__list" name="date_sort">
                         <option value="DESC" selected>От нового к старому</option>
                         <option value="ASC">От старого к новому</option>
                     </select>
@@ -34,8 +34,8 @@ if (CModule::IncludeModule("crm")) {
 
         echo '
             <div>
-                <strong>Статус</strong><select class="filter__list" name="status_sort">
-                    <option value="ALL" selected>Все</option>
+                <select class="filter__list" name="status_sort">
+                    <option value="ALL" selected>Выбрать статус</option>
                     <option value="FAIL">Отменён</option>
                     <option value="SUCCESS">Получен</option>
                 </select>
@@ -64,8 +64,8 @@ if (CModule::IncludeModule("crm")) {
 
             echo '
             <div>
-                <strong>Раздел</strong><select class="filter__list" name="section_sort">
-                    <option value="По умолчанию" selected>По умолчанию</option>
+                <select class="filter__list" name="section_sort">
+                    <option value="По умолчанию" selected>Выбрать раздел</option>
             ';
 
             // Выводим разделы
