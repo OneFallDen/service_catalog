@@ -41,11 +41,11 @@ class Router {
 
     public function run() {
         if($this->match()){
-            $path = 'app\contollers\\'.ucfirst($this->params['controller']).'Controller';
+            $path = 'app\controllers\\'.ucfirst($this->params['controller']).'Controller';
             if (class_exists($path)){
                 $action = $this->params['action'].'Action';
                 if (method_exists($path, $action)){
-                    $controller = new $path;
+                    $controller = new $path($this->params);
                     $controller->$action();
                 } else {
                     echo 'Page not found :('; // Add 404 page
