@@ -1,13 +1,14 @@
 <?php
 
-namespace app\controllers;
+    namespace app\controllers;
 
-use app\core\Controller;
+    use app\core\Controller;
 
-class MainController extends Controller{
+    class MainController extends Controller{
 
-    public function indexAction(){
-        echo 'Main page';
+        public function indexAction() {
+            $result = $this->model->getUpperLevel();
+            $this->view->render('Main page', $result);
+        }
+        
     }
-    
-}
