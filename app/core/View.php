@@ -13,7 +13,7 @@
             $this->path = $route['controller'].'/'.$route['action'];
         }
 
-        public function render($title, $vars = []) {
+        public function render($title, $result = []) {
             ob_start();
             require 'app/views/'.$this->path.'.php';
             $content = ob_get_clean();

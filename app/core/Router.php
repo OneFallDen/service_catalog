@@ -27,7 +27,14 @@
             $urls = explode('/', $url);
             $url = '';
             for ($i = 1; $i < count($urls); $i++) {
-                $url = $url.$urls[$i].'/';
+                if (strpos($urls[$i], '?') !== false) {
+                    $u = explode('?', $urls[$i]);
+                    $url = $url.$u[0].'/';
+                }
+                else
+                    $url = $url.$urls[$i].'/';
+                if ($i == 2)
+                    break;
             }
             $url = trim($url, '/');
 

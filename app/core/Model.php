@@ -1,15 +1,15 @@
 <?php
 
-namespace application\core;
+    namespace app\core;
 
-use application\lib\Factory;
+    use app\lib\Factory;
 
-abstract class Model {
+    abstract class Model {
 
-	public $factory;
-	
-	public function __construct() {
-		$this->factory = new factory;
-	}
+        public $factory;
+        
+        public function __construct() {
+            $this->factory = new Factory;
+        }
 
-}
+    }
