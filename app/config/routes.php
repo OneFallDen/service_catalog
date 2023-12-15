@@ -15,6 +15,16 @@ return [
     'account/history' => [
         'controller' => 'account',
         'action' => 'show_history_orders',
+    ],
+
+    'parent/select' => [
+        'controller' => 'parentSec',
+        'action' => 'parentSec',
+    ],
+
+    'parent/service' => [
+        'controller' => 'parentService',
+        'action' => 'parentService',
     ]
 
 ];
