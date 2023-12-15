@@ -2,16 +2,22 @@
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Каталог");
 ?>    
-    <header>
-        <nav>
-            <div class="navigation">
-                <a class="navigation__link" href="https://bitrixtest.ru/catalog_uslug/"><img src="img/каталог.svg" alt="Каталог">каталог</a>
-                <a class="navigation__link" href="?personalAccount=1"><img src="img/пользователь.svg"
-                    alt="Личный кабинет"></a>
-            </div>
-            <button onclick="history.go(-1);" class="come-back"><img src="img/стрелка.svg" alt="назад"></button>
-        </nav>
-    </header>
+<?php
+
+    use app\core\Router;
+
+    spl_autoload_register(function ($class) {
+        $path = str_replace('\\', '/', $class.'.php');
+        if(file_exists($path)){
+            require $path;
+        }
+    });
+
+    session_start();
+
+    $router = new Router;
+    $router->run();
+?>
 
     <main>
         <section>
@@ -31,44 +37,12 @@ $APPLICATION->SetTitle("Каталог");
                     require('history.php'); 
                 } else if (isset($_GET['self_service'])) {
                     require('ind.php'); 
-                } else {
-                    echo '
-                        <div class="hello">
-                        <p class="hello__text">Добро пожаловать!</p>
-                        <p>С чем связана ваша проблема?</p>
-                        </div>
-                    ';
-                    require('upper_level.php'); 
                 }
 
             ?>
 
         </section>
     </main>
-
-    <footer>
-        <div class="footer">
-            <div>
-                <a class=" application" href="?self_service">
-                    <p>Оставить свою заявку</p>
-                    <img src="img/заполнить форму.svg" alt="">
-                </a>
-            </div>
-
-            <div class="footer__item">
-                <div class="footer__block">
-                    <img src="img/телефон.svg" alt="">
-                    <p class="footer__block-text1">НОМЕР ТЕЛЕФОНА</p>
-                    <p class="footer__block-text2">+79517829209</p>
-                </div>
-                <div class="footer__block">
-                    <img src="img/почта.svg" alt="">
-                    <p class="footer__block-text1">EMAIL</p>
-                    <p class="footer__block-text2">email@gmail.com</p>
-                </div>
-            </div>
-        </div>
-    </footer>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Open+Sans:wght@400;700&family=Righteous&family=Ubuntu:wght@700&family=Urbanist:wght@500;600&display=swap');
