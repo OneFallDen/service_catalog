@@ -7,7 +7,7 @@
     class Main extends Model {
 
         public function getUpperLevel() {
-            $result = $this->db->row('SELECT title, description FROM news');
+            $result = $this->factory->getUpper();
             return $result;
         }
 
