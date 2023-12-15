@@ -1,16 +1,32 @@
 <?php
 
-namespace application\lib;
+    namespace app\lib;
 
-use Bitrix\Crm\Service\Container;
+    use Bitrix\Crm\Service\Container;
 
-class Factory {
+    require 'app/lib/factory_funcs.php';
 
-	protected $factory;
-	
-	public function __construct() {
-		$config = require 'application/config/factory.php';
-		$this->factory = Container::getInstance()->getFactory($entityTypeId);
-	}
+    class Factory {
 
-}
+        protected $factory;
+        
+        public function __construct() {
+
+            $config = require 'app/config/factory.php';
+            $this->factory = Container::getInstance()->getFactory($config['entityTypeId']);
+            
+        }
+
+        public function getUpper() {
+
+            return get_upper_level();
+
+        }
+
+        public function getPerentSec() {
+            
+            return get_parent_levels();
+            
+        }
+
+    }
